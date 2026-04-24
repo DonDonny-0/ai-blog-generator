@@ -1,7 +1,6 @@
 <?php
 
-test('the application returns a successful response', function () {
-    $response = $this->get('/');
-
-    $response->assertStatus(200);
+test('the application redirects the root url to posts', function () {
+    $this->get('/')
+        ->assertRedirect('/posts');
 });

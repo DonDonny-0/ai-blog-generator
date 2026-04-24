@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\SignupController;
+use Illuminate\Support\Facades\Route;
+
+Route::redirect('/', '/posts');
 
 Route::middleware('auth')->group(function () {
     Route::delete('/logout', [SessionsController::class, 'destroy'])->name('logout');
